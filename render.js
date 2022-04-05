@@ -430,7 +430,7 @@ function render(ctx, pipeline, scene) {
 
     const encoder = ctx.device.createCommandEncoder();
 
-    // record GPU instructors
+    // record GPU commands
     const renderPass = encoder.beginRenderPass({
         colorAttachments: [{
             view,
@@ -463,7 +463,7 @@ function render(ctx, pipeline, scene) {
 
     renderPass.endPass();
 
-    // submit GPU instructors
+    // submit GPU commands
     ctx.device.queue.submit([encoder.finish()]);
 }
 
